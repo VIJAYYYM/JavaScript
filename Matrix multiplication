@@ -1,0 +1,31 @@
+function matrixMultiplication(matrix1, matrix2) {
+    var result = [];
+    for (var i = 0; i < matrix1.length; i++) {
+        result[i] = [];
+        for (var j = 0; j < matrix2[0].length; j++) {
+            result[i][j] = 0;
+            for (var k = 0; k < matrix2.length; k++) {
+                result[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
+    }
+    return result;
+}
+
+var matrixA = [
+    [1, 2],
+    [3, 4]
+];
+
+var matrixB = [
+    [5, 6],
+    [7, 8]
+];
+
+var resultMatrix = matrixMultiplication(matrixA, matrixB);
+console.log("Matrix A:");
+console.log(matrixA);
+console.log("Matrix B:");
+console.log(matrixB);
+console.log("Result Matrix:");
+console.log(resultMatrix);
